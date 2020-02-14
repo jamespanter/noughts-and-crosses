@@ -1,3 +1,6 @@
+@import 'mixins';
+@import 'animation';
+
 * {
     border: 0;
     margin: 0;
@@ -14,38 +17,120 @@ body {
 header {
     text-align: center;
     padding: 5vh 0;
+
+    h1 {
+        font-size: 42px;
+    }
 }
 
-section {
+main {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
 
-    #grid {
-        background-color: bisque;
-        border: solid 2px black;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: 70vh;
-        width: 70vw;
+    #game-grid {
+        @include flex-row-center;
+        flex-direction: column;
+        width: 60%;
 
-        .grid-section {
+        #grid {
+            background-color: bisque;
             border: solid 2px black;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
             height: 100%;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
-            &.red {
-                background-color: red;
-            }
+            .grid-section {
+                @include flex-row-center;
+                border: solid 2px black;
+                height: 100%;
+                width: 100%;
 
-            &.blue {
-                background-color: blue;
+                &.red {
+                    background-color: red;
+                }
 
+                &.blue {
+                    background-color: blue;
+
+                }
             }
         }
+    }
+
+    #game-panel {
+        width: 30%;
+        height: 100%;
+
+        #players {
+            @include flex-column-center;
+            justify-content: space-between;
+            border: solid 4px black;
+            height: 100%;
+            padding: 20px;
+
+            p {
+                font-size: 32px;
+                font-weight: 900;
+
+                &.red {
+                    color: red;
+                }
+
+                &.blue {
+                    color: blue;
+                }
+            }
+
+            input {
+                padding: 10px;
+                font-family: 'Raleway', sans-serif;
+                height: 50px;
+                width: 80%;
+                font-size: 24px;
+                font-weight: 900;
+                margin-top: 5px;
+            }
+
+            label {
+                font-family: 'Raleway', sans-serif;
+                font-size: 22px;
+                font-weight: 900;
+
+                &[for=red-player] {
+                    color: red;
+                }
+
+                &[for=blue-player] {
+                    color: blue;
+                }
+            }
+
+            button {
+                padding: 20px;
+                margin: 20px;
+                font-family: 'Raleway', sans-serif;
+                font-size: 30px;
+                font-weight: 900;
+                border-radius: 5px;
+                border: solid 4px black;
+
+                &:hover {
+                    background-color: rgb(201, 191, 191);
+                }
+            }
+        }
+
+
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    section {
+        flex-direction: row;
     }
 }

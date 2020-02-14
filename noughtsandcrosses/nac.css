@@ -1,3 +1,62 @@
+.vibrate-1 {
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
 * {
   border: 0;
   margin: 0;
@@ -17,19 +76,40 @@ header {
   padding: 5vh 0;
 }
 
-section {
+header h1 {
+  font-size: 42px;
+}
+
+main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+main #game-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
 }
 
-section #grid {
+main #game-grid #grid {
   background-color: bisque;
   border: solid 2px black;
   display: -ms-grid;
@@ -38,30 +118,117 @@ section #grid {
       grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-  height: 70vh;
-  width: 70vw;
-}
-
-section #grid .grid-section {
-  border: solid 2px black;
   height: 100%;
   width: 100%;
+}
+
+main #game-grid #grid .grid-section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: solid 2px black;
+  height: 100%;
+  width: 100%;
 }
 
-section #grid .grid-section.red {
+main #game-grid #grid .grid-section.red {
   background-color: red;
 }
 
-section #grid .grid-section.blue {
+main #game-grid #grid .grid-section.blue {
   background-color: blue;
+}
+
+main #game-panel {
+  width: 30%;
+  height: 100%;
+}
+
+main #game-panel #players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: solid 4px black;
+  height: 100%;
+  padding: 20px;
+}
+
+main #game-panel #players p {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+main #game-panel #players p.red {
+  color: red;
+}
+
+main #game-panel #players p.blue {
+  color: blue;
+}
+
+main #game-panel #players input {
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  height: 50px;
+  width: 80%;
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 5px;
+}
+
+main #game-panel #players label {
+  font-family: 'Raleway', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+main #game-panel #players label[for=red-player] {
+  color: red;
+}
+
+main #game-panel #players label[for=blue-player] {
+  color: blue;
+}
+
+main #game-panel #players button {
+  padding: 20px;
+  margin: 20px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  border-radius: 5px;
+  border: solid 4px black;
+}
+
+main #game-panel #players button:hover {
+  background-color: #c9bfbf;
+}
+
+@media only screen and (min-width: 800px) {
+  section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 /*# sourceMappingURL=nac.css.map */
