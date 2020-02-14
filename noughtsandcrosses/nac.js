@@ -13,13 +13,13 @@ const addTurn = (grid) => {
 }
 
 const remove = () => {
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
-    grid.classList.remove('red');
+    grid1.classList.remove('red');
+    grid2.classList.remove('red');
+    grid3.classList.remove('red');
+    grid4.classList.remove('red');
+    grid5.classList.remove('red');
+    grid6.classList.remove('red');
+    grid7.classList.remove('red');
+    grid8.classList.remove('red');
+    grid9.classList.remove('red');
 }
