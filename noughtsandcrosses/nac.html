@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="nac.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noughts & crosses</title>
+    <script src="nac.js" async defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Noughts & Crosses</h1>
+    </header>
+    <section>
+        <div id="grid">
+            <div onclick="addTurn(grid1)" class="grid-section" id="grid1"></div>
+            <div onclick="addTurn(grid2)" class="grid-section" id="grid2"></div>
+            <div onclick="addTurn(grid3)" class="grid-section" id="grid3"></div>
+            <div onclick="addTurn(grid4)" class="grid-section" id="grid4"></div>
+            <div onclick="addTurn(grid5)" class="grid-section" id="grid5"></div>
+            <div onclick="addTurn(grid6)" class="grid-section" id="grid6"></div>
+            <div onclick="addTurn(grid7)" class="grid-section" id="grid7"></div>
+            <div onclick="addTurn(grid8)" class="grid-section" id="grid8"></div>
+            <div onclick="addTurn(grid9)" class="grid-section" id="grid9"></div>
+        </div>
+        <button onclick="remove()">remove</button>
+    </section>
+</body>
+
+</html>

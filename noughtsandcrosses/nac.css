@@ -1,0 +1,67 @@
+* {
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: burlywood;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Raleway', sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 5vh 0;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section #grid {
+  background-color: bisque;
+  border: solid 2px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  height: 70vh;
+  width: 70vw;
+}
+
+section #grid .grid-section {
+  border: solid 2px black;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section #grid .grid-section.red {
+  background-color: red;
+}
+
+section #grid .grid-section.blue {
+  background-color: blue;
+}
+/*# sourceMappingURL=nac.css.map */
