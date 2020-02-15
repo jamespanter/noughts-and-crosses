@@ -87,7 +87,7 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 80vw;
+  width: 70vw;
   height: 80vh;
   margin: 0 auto;
   padding-bottom: 30px;
@@ -107,7 +107,7 @@ main #game-grid {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 65%;
+  width: 60%;
 }
 
 main #game-grid #grid {
@@ -147,7 +147,7 @@ main #game-grid #grid .grid-section.blue {
 }
 
 main #game-panel {
-  width: 30%;
+  width: 35%;
   height: 100%;
 }
 
@@ -198,11 +198,9 @@ main #game-panel #players p {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
-  height: 40%;
   width: 90%;
   font-size: 32px;
   font-weight: 900;
-  background-color: #f8e0c4;
 }
 
 main #game-panel #players p.red {

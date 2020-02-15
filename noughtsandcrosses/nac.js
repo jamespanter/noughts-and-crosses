@@ -9,8 +9,6 @@ const grid1 = document.getElementById('grid1'),
     grid9 = document.getElementById('grid9'),
     updatePanel = document.getElementById('update-panel');
 
-
-
 // const gridSections = [
 //     grid1,
 //     grid2,
@@ -43,12 +41,10 @@ const addTurn = (grid) => {
     const redPlayer = document.getElementById("red-player").value;
     const red = document.querySelectorAll('#grid .red').length;
     const blue = document.querySelectorAll('#grid .blue').length;
-    console.log('red ' + red)
-    console.log('blue ' + blue)
-    console.log(redPlayer)
     updatePanel.classList.remove('red', 'blue');
-
-    if (grid.classList.contains('red') || (grid.classList.contains('blue'))) {
+    if (red == 5 && blue == 4 || red == 4 && blue == 5) {
+        updatePanel.innerHTML = 'NO WINNER';
+    } else if (grid.classList.contains('red') || (grid.classList.contains('blue'))) {
         updatePanel.innerHTML = "CAN'T GO THERE";
     } else if (red >= blue) {
         grid.classList.add('blue')
@@ -68,6 +64,7 @@ const addTurn = (grid) => {
         (grid3.classList.contains('red') && grid6.classList.contains('red') && grid9.classList.contains('red')) ||
         (grid1.classList.contains('red') && grid5.classList.contains('red') && grid9.classList.contains('red')) ||
         (grid3.classList.contains('red') && grid5.classList.contains('red') && grid7.classList.contains('red'))) {
+        updatePanel.classList.remove('vibrate-1', 'red', 'blue')
         updatePanel.classList.add('vibrate-1', 'red');
         updatePanel.innerHTML = `${redPlayer} WINS`;
     } else if ((grid1.classList.contains('blue') && grid2.classList.contains('blue') && grid3.classList.contains('blue')) ||
@@ -78,9 +75,8 @@ const addTurn = (grid) => {
         (grid3.classList.contains('blue') && grid6.classList.contains('blue') && grid9.classList.contains('blue')) ||
         (grid1.classList.contains('blue') && grid5.classList.contains('blue') && grid9.classList.contains('blue')) ||
         (grid3.classList.contains('blue') && grid5.classList.contains('blue') && grid7.classList.contains('blue'))) {
+        updatePanel.classList.remove('vibrate-1', 'red', 'blue')
         updatePanel.classList.add('vibrate-1', 'blue');
         updatePanel.innerHTML = `${bluePlayer} WINS`;
-    } else if (red == 5 && blue == 4 || red == 4 && blue == 5) {
-        updatePanel.innerHTML = 'NO WINNER';
     }
 }
