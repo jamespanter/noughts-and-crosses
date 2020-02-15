@@ -9,6 +9,8 @@ const grid1 = document.getElementById('grid1'),
     grid9 = document.getElementById('grid9'),
     updatePanel = document.getElementById('update-panel');
 
+
+
 // const gridSections = [
 //     grid1,
 //     grid2,
@@ -31,26 +33,31 @@ const remove = () => {
     grid7.classList.remove('red', 'blue');
     grid8.classList.remove('red', 'blue');
     grid9.classList.remove('red', 'blue');
-    updatePanel.innerHTML = 'Take a turn';
+    updatePanel.innerHTML = 'Blue player starts';
     updatePanel.classList.remove('vibrate-1', 'red', 'blue')
+    updatePanel.classList.add('blue');
 }
 
 const addTurn = (grid) => {
-    const red = document.querySelectorAll('div .red').length;
+    const bluePlayer = document.getElementById("blue-player").value;
+    const redPlayer = document.getElementById("red-player").value;
+    const red = document.querySelectorAll('#grid .red').length;
+    const blue = document.querySelectorAll('#grid .blue').length;
     console.log('red ' + red)
-    const blue = document.querySelectorAll('div .blue').length;
     console.log('blue ' + blue)
+    console.log(redPlayer)
+    updatePanel.classList.remove('red', 'blue');
 
     if (grid.classList.contains('red') || (grid.classList.contains('blue'))) {
         updatePanel.innerHTML = "CAN'T GO THERE";
     } else if (red >= blue) {
         grid.classList.add('blue')
         updatePanel.classList.add('red');
-        updatePanel.innerHTML = "RED'S TURN";
+        updatePanel.innerHTML = `${redPlayer}'s TURN`;
     } else {
         grid.classList.add('red')
         updatePanel.classList.add('blue');
-        updatePanel.innerHTML = "BLUE'S TURN";
+        updatePanel.innerHTML = `${bluePlayer}'s TURN`;
     }
 
     if ((grid1.classList.contains('red') && grid2.classList.contains('red') && grid3.classList.contains('red')) ||
@@ -62,7 +69,7 @@ const addTurn = (grid) => {
         (grid1.classList.contains('red') && grid5.classList.contains('red') && grid9.classList.contains('red')) ||
         (grid3.classList.contains('red') && grid5.classList.contains('red') && grid7.classList.contains('red'))) {
         updatePanel.classList.add('vibrate-1', 'red');
-        updatePanel.innerHTML = 'RED WINS';
+        updatePanel.innerHTML = `${redPlayer} WINS`;
     } else if ((grid1.classList.contains('blue') && grid2.classList.contains('blue') && grid3.classList.contains('blue')) ||
         (grid4.classList.contains('blue') && grid5.classList.contains('blue') && grid6.classList.contains('blue')) ||
         (grid7.classList.contains('blue') && grid8.classList.contains('blue') && grid9.classList.contains('blue')) ||
@@ -72,7 +79,7 @@ const addTurn = (grid) => {
         (grid1.classList.contains('blue') && grid5.classList.contains('blue') && grid9.classList.contains('blue')) ||
         (grid3.classList.contains('blue') && grid5.classList.contains('blue') && grid7.classList.contains('blue'))) {
         updatePanel.classList.add('vibrate-1', 'blue');
-        updatePanel.innerHTML = 'BLUE WINS';
+        updatePanel.innerHTML = `${bluePlayer} WINS`;
     } else if (red == 5 && blue == 4 || red == 4 && blue == 5) {
         updatePanel.innerHTML = 'NO WINNER';
     }

@@ -90,6 +90,7 @@ main {
   width: 80vw;
   height: 80vh;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 main #game-grid {
@@ -106,7 +107,7 @@ main #game-grid {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
+  width: 65%;
 }
 
 main #game-grid #grid {
@@ -172,12 +173,7 @@ main #game-panel #players {
   height: 100%;
 }
 
-main #game-panel #players h2 {
-  font-size: 30px;
-  margin: 15px 0;
-}
-
-main #game-panel #players p {
+main #game-panel #players div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -191,6 +187,17 @@ main #game-panel #players p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main #game-panel #players h2 {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+main #game-panel #players p {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
   height: 40%;
   width: 90%;
   font-size: 32px;
@@ -207,6 +214,7 @@ main #game-panel #players p.blue {
 }
 
 main #game-panel #players label {
+  margin: 10px;
   font-family: 'Raleway', sans-serif;
   font-size: 22px;
   font-weight: 900;
@@ -228,11 +236,11 @@ main #game-panel #players input {
   width: 80%;
   font-size: 24px;
   font-weight: 900;
-  margin-top: 5px;
+  text-align: center;
 }
 
 main #game-panel #players button {
-  padding: 20px;
+  padding: 10px;
   margin: 20px;
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
