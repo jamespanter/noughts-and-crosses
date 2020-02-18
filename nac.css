@@ -159,10 +159,14 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70vw;
+  width: 90vw;
   height: 80vh;
   margin: 0 auto;
   padding-bottom: 30px;
@@ -182,7 +186,8 @@ main #game-grid {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 60%;
+  width: 100%;
+  height: 50vh;
 }
 
 main #game-grid #grid {
@@ -222,8 +227,9 @@ main #game-grid #grid .grid-section.blue {
 }
 
 main #game-panel {
-  width: 35%;
+  width: 100%;
   height: 100%;
+  margin: 10px 0;
 }
 
 main #game-panel #players {
@@ -327,6 +333,22 @@ main #game-panel #players button:hover {
 }
 
 @media only screen and (min-width: 800px) {
+  main {
+    width: 70vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main #game-grid {
+    width: 60%;
+    height: unset;
+  }
+  main #game-panel {
+    width: 35%;
+    height: unset;
+    margin: 0px 0;
+  }
   section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

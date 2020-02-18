@@ -28,8 +28,9 @@ header {
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 70vw;
+    width: 90vw;
     height: 80vh;
     margin: 0 auto;
     padding-bottom: 30px;
@@ -37,7 +38,8 @@ main {
     #game-grid {
         @include flex-row-center;
         flex-direction: column;
-        width: 60%;
+        width: 100%;
+        height: 50vh;
 
         #grid {
             background-color: bisque;
@@ -67,8 +69,9 @@ main {
     }
 
     #game-panel {
-        width: 35%;
+        width: 100%;
         height: 100%;
+        margin: 10px 0;
 
         #players {
             @include flex-column-center;
@@ -149,6 +152,22 @@ main {
 }
 
 @media only screen and (min-width: 800px) {
+    main {
+        width: 70vw;
+        flex-direction: row;
+
+        #game-grid {
+            width: 60%;
+            height: unset;
+        }
+
+        #game-panel {
+            width: 35%;
+            height: unset;
+            margin: 0px 0;
+        }
+    }
+
     section {
         flex-direction: row;
     }
