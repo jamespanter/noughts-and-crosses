@@ -1,6 +1,9 @@
 @import 'mixins';
 @import 'animation';
 
+$player-one-color: blue;
+$player-two-color: red;
+
 * {
     border: 0;
     margin: 0;
@@ -52,11 +55,11 @@ main {
                 width: 100%;
 
                 &.red {
-                    background-color: red;
+                    background-color: $player-two-color;
                 }
 
                 &.blue {
-                    background-color: blue;
+                    background-color: $player-one-color;
 
                 }
             }
@@ -92,11 +95,11 @@ main {
                 font-weight: 900;
 
                 &.red {
-                    color: red;
+                    color: $player-two-color;
                 }
 
                 &.blue {
-                    color: blue;
+                    color: $player-one-color;
                 }
             }
 
@@ -107,11 +110,11 @@ main {
                 font-weight: 900;
 
                 &[for=red-player] {
-                    color: red;
+                    color: $player-two-color;
                 }
 
                 &[for=blue-player] {
-                    color: blue;
+                    color: $player-one-color;
                 }
             }
 
