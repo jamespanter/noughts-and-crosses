@@ -1,174 +1,178 @@
-@import 'mixins';
-@import 'animation';
+@import "mixins";
+@import "animation";
 
 $player-one-color: blue;
 $player-two-color: red;
 
 * {
-    border: 0;
-    margin: 0;
-    box-sizing: border-box;
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: burlywood;
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Raleway', sans-serif;
+  background: url(./background.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: burlywood;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Raleway", sans-serif;
 }
 
 header {
-    text-align: center;
-    padding: 5vh 0;
+  text-align: center;
+  padding: 5vh 0;
 
-    h1 {
-        font-size: 42px;
-    }
+  h1 {
+    padding: 0 20px;
+    color: whitesmoke;
+    font-size: 42px;
+  }
 }
 
 main {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90vw;
+  height: 80vh;
+  margin: 0 auto;
+  padding-bottom: 30px;
+
+  #game-grid {
+    @include flex-row-center;
     flex-direction: column;
-    justify-content: space-between;
-    width: 90vw;
-    height: 80vh;
-    margin: 0 auto;
-    padding-bottom: 30px;
+    width: 100%;
+    height: 50vh;
 
-    #game-grid {
+    #grid {
+      background-color: whitesmoke;
+      opacity: 0.8;
+      border: solid 2px black;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      width: 100%;
+      height: 100%;
+
+      .grid-section {
         @include flex-row-center;
-        flex-direction: column;
-        width: 100%;
-        height: 50vh;
-
-        #grid {
-            background-color: bisque;
-            border: solid 2px black;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            height: 100%;
-            width: 100%;
-
-            .grid-section {
-                @include flex-row-center;
-                border: solid 2px black;
-                height: 100%;
-                width: 100%;
-
-                &.red {
-                    background-color: $player-two-color;
-                }
-
-                &.blue {
-                    background-color: $player-one-color;
-
-                }
-            }
-        }
-    }
-
-    #game-panel {
-        width: 100%;
+        border: solid 2px black;
         height: 100%;
-        margin: 10px 0;
+        width: 100%;
 
-        #players {
-            @include flex-column-center;
-            justify-content: left;
-            border: solid 4px black;
-            padding: 20px;
-            height: 100%;
-
-            div {
-                @include flex-column-center;
-            }
-
-            h2 {
-                font-size: 30px;
-                margin: 15px 0;
-            }
-
-            p {
-                display: inline-block;
-                text-align: center;
-                vertical-align: middle;
-                width: 90%;
-                font-size: 32px;
-                font-weight: 900;
-
-                &.red {
-                    color: $player-two-color;
-                }
-
-                &.blue {
-                    color: $player-one-color;
-                }
-            }
-
-            label {
-                margin: 10px;
-                font-family: 'Raleway', sans-serif;
-                font-size: 22px;
-                font-weight: 900;
-
-                &[for=red-player] {
-                    color: $player-two-color;
-                }
-
-                &[for=blue-player] {
-                    color: $player-one-color;
-                }
-            }
-
-            input {
-                border: solid 1px black;
-                padding: 10px;
-                font-family: 'Raleway', sans-serif;
-                height: 50px;
-                width: 80%;
-                font-size: 24px;
-                font-weight: 900;
-                text-align: center;
-            }
-
-            button {
-                padding: 10px;
-                margin: 20px;
-                font-family: 'Raleway', sans-serif;
-                font-size: 30px;
-                font-weight: 900;
-                border-radius: 5px;
-                border: solid 4px black;
-
-                &:hover {
-                    background-color: rgb(201, 191, 191);
-                }
-            }
+        &.red {
+          background-color: $player-two-color;
         }
 
-
+        &.blue {
+          background-color: $player-one-color;
+        }
+      }
     }
+  }
+
+  #game-panel {
+    opacity: 0.8;
+    background-color: whitesmoke;
+    width: 100%;
+    margin: 10px 0;
+
+    #players {
+      @include flex-column-center;
+      justify-content: left;
+      border: solid 4px black;
+      padding: 20px;
+      height: 100%;
+
+      div {
+        @include flex-column-center;
+      }
+
+      h2 {
+        font-size: 30px;
+        margin: 15px 0;
+      }
+
+      p {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        width: 90%;
+        font-size: 32px;
+        font-weight: 900;
+
+        &.red {
+          color: $player-two-color;
+        }
+
+        &.blue {
+          color: $player-one-color;
+        }
+      }
+
+      label {
+        margin: 10px;
+        font-family: "Raleway", sans-serif;
+        font-size: 22px;
+        font-weight: 900;
+
+        &[for="red-player"] {
+          color: $player-two-color;
+        }
+
+        &[for="blue-player"] {
+          color: $player-one-color;
+        }
+      }
+
+      input {
+        border: solid 1px black;
+        padding: 10px;
+        font-family: "Raleway", sans-serif;
+        height: 50px;
+        width: 80%;
+        font-size: 24px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px;
+        margin: 20px;
+        font-family: "Raleway", sans-serif;
+        font-size: 30px;
+        font-weight: 900;
+        border-radius: 5px;
+        border: solid 4px black;
+
+        &:hover {
+          background-color: rgb(201, 191, 191);
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 800px) {
-    main {
-        width: 70vw;
-        flex-direction: row;
+  main {
+    width: 70vw;
+    flex-direction: row;
 
-        #game-grid {
-            width: 60%;
-            height: unset;
-        }
-
-        #game-panel {
-            width: 35%;
-            height: unset;
-            margin: 0px 0;
-        }
+    #game-grid {
+      width: 60%;
+      height: unset;
     }
 
-    section {
-        flex-direction: row;
+    #game-panel {
+      width: 35%;
+      height: unset;
+      margin: 0px 0;
     }
+  }
+
+  section {
+    flex-direction: row;
+  }
 }
