@@ -14,7 +14,6 @@ body {
   background: url(./background.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: burlywood;
   height: 100vh;
   width: 100vw;
   font-family: "Raleway", sans-serif;
@@ -36,7 +35,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   width: 90vw;
-  height: 80vh;
+  min-height: 80vh;
   margin: 0 auto;
   padding-bottom: 30px;
 
@@ -47,20 +46,18 @@ main {
     height: 50vh;
 
     #grid {
+      border: solid 4px black;
       background-color: whitesmoke;
       opacity: 0.8;
-      border: solid 2px black;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
-      width: 100%;
-      height: 100%;
 
       .grid-section {
         @include flex-row-center;
         border: solid 2px black;
-        height: 100%;
-        width: 100%;
+        height: 90px;
+        width: 90px;
 
         &.red {
           background-color: $player-two-color;
@@ -155,14 +152,21 @@ main {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 600px) {
   main {
-    width: 70vw;
+    // width: 90vw;
     flex-direction: row;
 
     #game-grid {
       width: 60%;
       height: unset;
+
+      #grid {
+        .grid-section {
+          height: 120px;
+          width: 120px;
+        }
+      }
     }
 
     #game-panel {
@@ -174,5 +178,46 @@ main {
 
   section {
     flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  main {
+    #game-grid {
+      #grid {
+        .grid-section {
+          height: 140px;
+          width: 140px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  main {
+    width: 80%;
+    #game-grid {
+      #grid {
+        .grid-section {
+          height: 180px;
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  main {
+    width: 80%;
+    #game-grid {
+      #grid {
+        .grid-section {
+          height: 220px;
+          width: 220px;
+        }
+      }
+    }
   }
 }
